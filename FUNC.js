@@ -243,7 +243,7 @@ if (shopPage) {
 		invoicePanel.innerHTML = `
 			<div class="invoice-header">
 				<div>
-					<p class="invoice-label">VELSEYON</p>
+					<p class="invoice-label">velseyon.vercel.app</p>
 					<h2>Order Invoice</h2>
 				</div>
 				<div class="invoice-actions">
