@@ -51,9 +51,10 @@ body.page-exit {
     }
 }
 body.home-page {
-    background-image: url("Photos/dress.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: #a8b88d;
+    background-image: linear-gradient(rgba(255, 250, 246, .15), rgba(255, 250, 246, .22)), url("Photos/baby shorts 1.jpeg");
+    background-size:cover;
+    background-position: center top;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -613,7 +614,8 @@ body.home-page .home-cta {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(2px);
     scroll-margin-top: 80px;
 }
 .shop-page {
