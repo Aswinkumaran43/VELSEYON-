@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | VELSEYON</title>
+    <link rel="stylesheet" href="STYLE.css">
+    <link rel="icon" type="image/png" href="Photos/VELSEYON Logo.png">
+</head>
+<body class="login-page">
+    <main class="login-screen" aria-labelledby="login-title">
+        <div class="login-panel">
+            <a href="HOME%20PAGE.html" aria-label="Back to VELSEYON home">
+                <img class="login-logo" src="Photos/VELSEYON Logo.png" alt="VELSEYON Logo">
+            </a>
+            <p class="login-eyebrow">WELCOME TO VELSEYON</p>
+            <h1 id="login-title">Login to your account.</h1>
+            <p class="login-intro">Enter your account details to continue.</p>
+            <form id="login-form" class="login-form">
+                <label for="login-email">Email address</label>
+                <input id="login-email" name="login-email" type="email" autocomplete="email" required>
+                <label for="login-password">Password</label>
+                <input id="login-password" name="login-password" type="password" autocomplete="current-password" required>
+                <button type="submit">Login</button>
+                <p id="login-status" class="login-status" role="status" aria-live="polite"></p>
+            </form>
+            <a class="login-exit" href="HOME%20PAGE.html">Exit to homepage</a>
+            <div id="account-panel" class="account-panel" hidden>
+                <div id="account-initial" class="account-initial" aria-hidden="true">?</div>
+                <p id="account-email" class="account-email"></p>
+                <button id="logout-button" class="logout-button" type="button">Logout</button>
+                <a class="login-exit" href="HOME%20PAGE.html">Exit to homepage</a>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="FUNC.js"></script>
+</body>
+</html>
