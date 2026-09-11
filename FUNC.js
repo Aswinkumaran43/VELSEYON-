@@ -196,6 +196,14 @@ if (shopPage) {
 		return `₹${safePrice.toLocaleString('en-IN')}`;
 	};
 
+	const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		"'": '&#39;',
+		'"': '&quot;'
+	}[character]));
+
 	const saveCart = () => {
 		localStorage.setItem('velsera-cart', JSON.stringify(cart));
 	};
@@ -216,8 +224,8 @@ if (shopPage) {
 		orderHistoryList.innerHTML = orderHistory.slice().reverse().map((order) => `
 			<div class="history-item">
 				<div>
-					<strong>${order.orderId}</strong>
-					<span>${order.date}</span>
+					<strong>${escapeHtml(order.orderId)}</strong>
+					<span>${escapeHtml(order.date)}</span>
 				</div>
 				<div>
 					<span>${order.items.reduce((count, item) => count + item.quantity, 0)} items | Cash on Delivery</span>
@@ -235,7 +243,7 @@ if (shopPage) {
 		invoicePanel.innerHTML = `
 			<div class="invoice-header">
 				<div>
-					<p class="invoice-label">VELSERA</p>
+					<p class="invoice-label">VELSEYON</p>
 					<h2>Order Invoice</h2>
 				</div>
 				<div class="invoice-actions">
@@ -244,14 +252,14 @@ if (shopPage) {
 				</div>
 			</div>
 			<div class="invoice-meta">
-				<span>Order: <strong>${invoice.orderId}</strong></span>
-				<span>${invoice.date}</span>
+				<span>Order: <strong>${escapeHtml(invoice.orderId)}</strong></span>
+				<span>${escapeHtml(invoice.date)}</span>
 				<span>Payment: <strong>Cash on Delivery</strong></span>
 			</div>
 			<div class="invoice-customer">
-				<strong>${invoice.customer.name}</strong>
-				<span>${invoice.customer.phone}</span>
-				<span>${invoice.customer.address}</span>
+				<strong>${escapeHtml(invoice.customer.name)}</strong>
+				<span>${escapeHtml(invoice.customer.phone)}</span>
+				<span>${escapeHtml(invoice.customer.address)}</span>
 			</div>
 			<div class="invoice-lines">
 				${invoice.items.map((item) => `<div><span>${item.name} × ${item.quantity}</span><strong>${formatPrice(item.price * item.quantity)}</strong></div>`).join('')}
