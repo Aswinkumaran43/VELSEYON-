@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/HOME%20PAGE.html"
+    }
+  ]
+}
